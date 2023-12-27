@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>LOGIN FORM</title>
+   
+</head>
+<style>
+    /* Add CSS for text and button alignment */
+    .align-horizontal {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Optional: Center vertically as well */
+    }
+    body{
+
+        background-image: url('black.jpg');
+        background-size: cover;
+        font-family: "open sans";
+        color: #fff;
+    }
+    section{
+        /* position: relative; */
+        height: 100%;
+        width: 100%;
+        
+        background-size: cover ;
+        background-position: center center;
+    }
+    
+    .form-container{
+        /* position: absolute; */
+        margin-top: 50px;
+        /* margin-bottom: 50px; */
+        margin-left: 550px ;
+        background: linear-gradient(rgba(0,0,0,0.3),rgba(0, 0, 0, 0.74));
+        width: 380px;
+        padding: 50px 30px;
+        border-radius: 10px;
+        box-shadow: 7px 7px 60px #000;
+    }
+    
+    h1{
+        text-transform: uppercase;
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 2em;
+        position: relative;
+        bottom: 0;
+        font-size: 35px;
+    }
+    
+    
+    .control input{
+        width: 100%;
+        display: block;
+        padding: 10px;
+        color: #222;
+        border:none;
+        outline: none;
+        margin: 1em 0;
+    
+    
+    }
+    .logout{
+        background: rgb(16, 253, 253);
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 1.2em;
+        opacity: .7;
+        transition: opacity .3s ease;
+        margin-left: 80px;
+        margin-right: 80px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .logout:hover{
+        opacity: 1;
+    }
+    .control input[type="submit"]{
+        background: darkcyan;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 1.2em;
+        opacity: .7;
+        transition: opacity .3s ease;
+        cursor: pointer;
+    
+    }
+    .control input[type="submit"]:hover{
+        opacity: 1;
+    }
+    
+    
+    .link a{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        opacity: .6;
+        transition: opacity .3s ease;
+    
+    }
+    .link a:hover{
+        opacity: 1;
+    }
+    .logoutout a{
+        
+            text-decoration: none;
+            color: rgb(5, 9, 254);
+            opacity: .6;
+            transition: opacity .3s ease;
+        
+    }
+    
+    
+    
+</style>
+<body>
+    <section>
+        <div class="form-container" id="form-container1" style=" text-align: center;">
+            <h2>Login</h2>
+                <div class="control">
+                    <input type="text" name="userid" id="name" placeholder="Enter Your Username" required>
+                </div>
+                <div class="control">
+                    <input type="password"  name="password" id="pass" placeholder="Enter Your Password" required>
+                    <div style="display: flex; align-items: center;">
+                        <input style="width: 80%; height: 23px;" type="text" name="otp" id="otp" placeholder="Enter OTP" >
+                        <input onclick="otpsend()" style="width: 29%; margin-left: 3px;" class="align-horizontal" type="submit" name="submit" value="Get OTP">
+                    </div>
+                </div>
+                <div class="control">
+                    
+                </div>
+                <div class="control">
+                    <!-- Wrap text and button in a container for alignment -->
+                    <div class="align-horizontal">
+                        
+                    </div>
+                </div>
+                <!-- <span><input type="checkbox" required> Remember me</span> -->
+                <div class="control">
+                    <a href="index.html"><input type="submit" name="submit" value="LOGIN" style="width: 105%;"></a>
+                </div>
+            <div class="link1" style="margin-top: 20px;">
+                <a href="forget.html">Forget/Reset Password?</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function otpsend(){
+            var userid = document.getElementById("name").value;
+            var password = document.getElementById("pass").value;
+            $.ajax({
+                type: "GET",
+                url: '/getOtp',
+                data: {
+                    "userid":userid,
+                    "password":password
+                },
+                dataType: "json",
+                success: function (data) {
+                    // any process in data
+                    alert(data);
+                },
+                failure: function () {
+                    alert("Error 404");
+                }
+            });
+        }
+           
+    </script>
+</body>
+
+</html>

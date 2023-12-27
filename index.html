@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Department Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Police Department Feedback Form</h1>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email">
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+
+        <label for="incidentDate">Date and Time of Incident:</label>
+        <input type="datetime-local" id="incidentDate" name="incidentDate">
+
+        <label for="location">Location of Incident:</label>
+        <input type="text" id="location" name="location" placeholder="Incident Location">
+
+        <label for="interactionType">Type of Interaction:</label>
+        <select id="interactionType" name="interactionType">
+            <option value="trafficStop">Traffic Stop</option>
+            <option value="arrest">Arrest</option>
+            <option value="communityEvent">Community Event</option>
+            <option value="complaint">Complaint</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="experience">Rate Your Overall Experience:</label>
+        <select id="experience" name="experience">
+            <option value="verySatisfied">Very Satisfied</option>
+            <option value="satisfied">Satisfied</option>
+            <option value="neutral">Neutral</option>
+            <option value="dissatisfied">Dissatisfied</option>
+            <option value="veryDissatisfied">Very Dissatisfied</option>
+        </select>
+
+        <label for="interactionDescription">Briefly Describe the Nature of Your Interaction:</label>
+        <textarea id="interactionDescription" name="interactionDescription" rows="4" placeholder="Description"></textarea>
+
+        <label for="courteous">Were the Police Officers Courteous and Professional?</label>
+        <select id="courteous" name="courteous">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="notApplicable">Not Applicable</option>
+        </select>
+
+        <label for="communication">How would you rate the Communication during the Interaction?</label>
+        <select id="communication" name="communication">
+            <option value="excellent">Excellent</option>
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
+            <option value="poor">Poor</option>
+        </select>
+
+        <label for="concerns">Were your concerns addressed appropriately?</label>
+        <select id="concerns" name="concerns">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            <option value="notApplicable">Not Applicable</option>
+        </select>
+
+        <label for="improvement">Suggestions for Improvement (if any):</label>
+        <textarea id="improvement" name="improvement" rows="4" placeholder="Suggestions"></textarea>
+
+        <label for="contact">Would you like to be contacted regarding your feedback?</label>
+        <select id="contact" name="contact">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label for="comments">Additional Comments:</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Additional Comments"></textarea>
+
+        <button type="submit">Submit Feedback</button>
+    </div>
+
+</body>
+</html>
